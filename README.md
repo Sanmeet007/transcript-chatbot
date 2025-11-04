@@ -14,7 +14,7 @@ By fetching, embedding, and retrieving transcript data from a **Chroma Vector St
 - **⚡ Real-Time Interaction:** Smooth and fast chat experience powered by **FastAPI** and **Uvicorn**.  
 
 
-## Screenshots 
+## 📸 Screenshots 
 
 ![Screenshot-1](https://sanmeet007.github.io/public/transcript-chatbot/screenshot-1.png)
 ![Screenshot-2](https://sanmeet007.github.io/public/transcript-chatbot/screenshot-2.png)
