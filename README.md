@@ -13,6 +13,13 @@ By fetching, embedding, and retrieving transcript data from a **Chroma Vector St
 - **🌙 Modern UI:** Clean, responsive, dark-themed interface with typing indicators.  
 - **⚡ Real-Time Interaction:** Smooth and fast chat experience powered by **FastAPI** and **Uvicorn**.  
 
+
+## Screenshots 
+
+![Screenshot-1](https://sanmeet007.github.io/public/transcript-chatbot/screenshot-1.png)
+![Screenshot-2](https://sanmeet007.github.io/public/transcript-chatbot/screenshot-2.png)
+![Screenshot-3](https://sanmeet007.github.io/public/transcript-chatbot/screenshot-3.png)
+![Screenshot-4](https://sanmeet007.github.io/public/transcript-chatbot/screenshot-4.png)
 ---
 
 ## 🛠️ Tech Stack
@@ -73,10 +80,3 @@ Create a `.env` file with the following configuration:
 ```bash
 GOOGLE_API_KEY=your_gemini_api_key
 ```
-
----
-
-## 🧠 Example Interaction
-
-**User:** What was the main topic discussed in the video?<br>
-**Bot:** The speaker focused on AI advancements and their impact on productivity.
