@@ -1,16 +1,17 @@
 # 🎬 Transcript Chatbot
 
-**Transcript Chatbot** is a lightweight web application that enables users to **interact conversationally with YouTube video transcripts**.  
-By fetching and embedding transcript data, the system allows users to ask natural questions and receive contextually relevant, human-like responses.
+**Transcript Chatbot** is a lightweight **Retrieval-Augmented Generation (RAG)** web application that enables users to **interact conversationally with YouTube video transcripts**.  
+By fetching, embedding, and retrieving transcript data from a **Chroma Vector Store**, the system allows users to ask natural questions and receive **contextually relevant, human-like responses**.
 
 ---
 
 ## 🚀 Key Features
-- **🎥 Transcript Integration:** Load YouTube video transcripts seamlessly.  
-- **💬 Conversational AI:** Natural, context-aware responses without rigid phrasing.  
-- **🧠 Contextual Retrieval:** Uses embeddings to identify the most relevant transcript segments.  
+- **🎥 Transcript Integration:** Load and process YouTube video transcripts seamlessly.  
+- **💬 Conversational AI:** Generates natural, context-aware answers without rigid phrasing.  
+- **🧠 RAG Architecture:** Combines retrieval and generation for accurate, grounded responses.  
+- **💾 Chroma Vector Store:** Efficiently stores and retrieves transcript embeddings for fast similarity search.  
 - **🌙 Modern UI:** Clean, responsive, dark-themed interface with typing indicators.  
-- **⚡ Real-Time Interaction:** Fast and smooth chat experience powered by FastAPI.  
+- **⚡ Real-Time Interaction:** Smooth and fast chat experience powered by **FastAPI** and **Uvicorn**.  
 
 ---
 
@@ -19,7 +20,8 @@ By fetching and embedding transcript data, the system allows users to ask natura
 |-------|-------------|
 | **Frontend** | HTML, CSS, JavaScript |
 | **Backend** | Python (FastAPI) |
-| **AI Layer** | Gemini / LangChain integration with text embeddings |
+| **AI Layer** | Gemini / LangChain with text embeddings |
+| **Vector Database** | ChromaDB |
 | **Storage** | In-memory session management |
 | **Deployment** | Uvicorn web server |
 
@@ -27,9 +29,10 @@ By fetching and embedding transcript data, the system allows users to ask natura
 
 ## 🧩 System Overview
 1. **Session Initialization:** Creates a temporary session to manage chat state.  
-2. **Transcript Loading:** Retrieves and processes YouTube transcripts, splitting them into text chunks.  
-3. **Question Answering:** The model uses similarity search on embeddings to find relevant context and generates a conversational answer.  
-4. **Session Termination:** Sessions and related embeddings are automatically cleared upon exit.  
+2. **Transcript Loading:** Retrieves and processes YouTube transcripts, splitting them into chunks.  
+3. **Embedding & Storage:** Generates embeddings and stores them in **Chroma Vector Store**.  
+4. **Question Answering (RAG):** On each query, relevant transcript chunks are retrieved from Chroma and passed to the model for answer generation.  
+5. **Session Termination:** Sessions and embeddings are automatically cleared upon exit.  
 
 ---
 
@@ -39,7 +42,7 @@ By fetching and embedding transcript data, the system allows users to ask natura
 ```bash
 git clone https://github.com/your-username/transcript-chatbot.git
 cd transcript-chatbot
-````
+```
 
 ### 2️⃣ Install Dependencies
 
@@ -70,3 +73,10 @@ Create a `.env` file with the following configuration:
 ```bash
 GOOGLE_API_KEY=your_gemini_api_key
 ```
+
+---
+
+## 🧠 Example Interaction
+
+**User:** What was the main topic discussed in the video?<br>
+**Bot:** The speaker focused on AI advancements and their impact on productivity.
